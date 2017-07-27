@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "ewfwefwe",
+      "author": "wfwefw",
+      "id": 2
+    },
+    {
+      "title": "json-server1",
+      "author": "typicode1",
+      "id": 3
+    },
+    {
+      "title": "ewfwefwe",
+      "author": "wfwefw",
+      "id": 4
+    },
+    {
+      "title": "title",
+      "author": "author",
+      "id": 5
+    },
+    {
+      "title": "Vasya",
+      "author": "Petya",
+      "id": 6
+    },
+    {
+      "title": "privet",
+      "author": "Roman",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
