@@ -31,9 +31,19 @@
       "id": 6
     },
     {
-      "title": "privet",
-      "author": "Roman",
+      "title": "Hello, Oleg!",
+      "author": "Roma",
       "id": 7
+    },
+    {
+      "title": "How are you?",
+      "author": "Roma",
+      "id": 8
+    },
+    {
+      "title": "I'm glad to see you!",
+      "author": "Roma",
+      "id": 9
     }
   ],
   "comments": [

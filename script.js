@@ -25,7 +25,7 @@ function getJSON(url, successHandler, errorHandler) {
     xhr.send();
 }
 
-getJSON('http://localhost:3000/posts', function(data) {
+function showPosts(data) {
     var div,
         i;
 
@@ -33,8 +33,15 @@ getJSON('http://localhost:3000/posts', function(data) {
         div = document.createElement('div');
         div.className = 'posts';
         div.innerHTML = 'title: ' + data[i].title + ' autor: ' + data[i].author + ' id: ' + data[i].id;
+
         document.body.insertBefore(div, document.body.firstChild);
     }
+}
+
+getJSON('http://localhost:3000/posts', function(data) {
+    showPosts(data);
+
+    console.log(data);
 }, function(status) {
     console.log('Something went wrong.', status);
 });
@@ -59,14 +66,12 @@ function postJSON(url, successHandler, errorHandler) {
             status = xhr.status;
             post = JSON.parse(xhr.responseText);
 
-            console.log(JSON.parse(xhr.responseText));
-            div = document.createElement('div');
-            div.className = 'posts';
-            div.innerHTML = 'title: ' + post.title + ' autor: ' + post.author + ' id: ' + post.id;
-            document.body.insertBefore(div, document.body.firstChild);
+            console.log(post);
+
+            addPost(post);
 
             if (status === 200) {
-                data = responseType ? xhr.response : JSON.parse(xhr.responseText);
+                data = responseType ? xhr.response : post;
 
                 successHandler && successHandler(data);
             } else {
@@ -76,6 +81,14 @@ function postJSON(url, successHandler, errorHandler) {
     };
 
     xhr.send(JSON.stringify({ title: title, author: author }));
+}
+
+function addPost(post) {
+    div = document.createElement('div');
+    div.className = 'posts';
+    div.innerHTML = 'title: ' + post.title + ' autor: ' + post.author + ' id: ' + post.id;
+
+    document.body.insertBefore(div, document.body.firstChild);
 }
 
 document.forms[0].onsubmit = function (event) {
