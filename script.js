@@ -70,7 +70,7 @@ function postJSON(url, successHandler, errorHandler) {
 
             addPost(post);
 
-            if (status === 200) {
+            if (status === 201) {
                 data = responseType ? xhr.response : post;
 
                 successHandler && successHandler(data);
